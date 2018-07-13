@@ -1,0 +1,37 @@
+pragma solidity ^0.4.0;
+
+contract bank{
+    uint private value;
+    
+    function deposit(uint amount){
+        value += amount;
+    }
+    
+    function withdraw(uint amount){
+        value -= amount;
+    }
+    
+    function balance() returns (uint){
+        return value;
+    }
+}
+
+contract ballot is bank {
+    string private name;
+    uint private age;
+    
+    function SetName(string newName){
+        name = newName;
+    }
+    
+    function GetName() returns (string){
+        return name;
+    }
+
+    function SetAge(uint NewAge){
+        age = NewAge;
+    }
+    function GetAge() returns (uint){
+        return age;
+    }
+}
